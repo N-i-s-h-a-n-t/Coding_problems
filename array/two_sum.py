@@ -1,29 +1,14 @@
-# Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+# write a program to find all pairs of integers whose sum is equal to given number
 
-# You may assume that each input would have exactly one solution, and you may not use the same element twice.
+inp = [1, 2, 3, 2, 4, 5 ,2,  6, 3 , 9, 11]
+target = 6
 
-# Example 1:
+def pairsum(inp, target):
+  for i in range(len(inp)):
+    for j in range(i+1, len(inp)):
+      if inp[i] == inp[j]:
+        continue
+      elif inp[i] + inp[j] == target:
+        print(f"[{i}, {j}]")
 
-nums = [2,7,11,15]
-target = 9
-# Output: [0,1]
-# Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
-# Example 2:
-
-# nums = [3,2,4]
-# target = 6
-# Output: [1,2]
-# Example 3:
-
-# Input: nums = [3,3], target = 6
-# Output: [0,1]
-
-def two_sum(nums, target):
-  for i in range(len(nums)):
-    for j in range(i+1, len(nums)):
-      if nums[i] + nums[j] == target:
-        return [i, j]
-
-print(two_sum(nums, target))
-
-
+pairsum(inp, target)
